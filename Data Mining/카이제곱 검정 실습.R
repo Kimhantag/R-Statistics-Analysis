@@ -1,5 +1,5 @@
-#д╚юла╕╟Ж ╟ка╓ ╫г╫ю
-#©╧а╕ 1 юШгу╣╣ ╟ка╓
+#Л╧╢Л²╢Л═°ЙЁ╠ Й╡─Л═∙ Л▀╓Л┼╣
+#Л≤┬Л═° 1 Л═│М∙╘К▐└ Й╡─Л═∙
 data(HairEyeColor)
 HairEyeColor
 
@@ -8,13 +8,13 @@ Eye
 
 chisq.test(Eye, p=c(.5, .25, .15, .1))
 
-#©╧а╕ 2 ╣╤╦Ё╪╨ ╟ка╓
+#Л≤┬Л═° 2 К▐┘К╕╫Л└╠ Й╡─Л═∙
 HairEye<-margin.table(HairEyeColor, c(1,2))
 HairEye
 
 chisq.test(HairEye)
 
-#©╧а╕ 3 ╣©юо╪╨ ╟ка╓
+#Л≤┬Л═° 3 К▐≥Л²╪Л└╠ Й╡─Л═∙
 a<-margin.table(HairEyeColor, c(3,2))
 a
 chisq.test(a)
@@ -22,24 +22,24 @@ chisq.test(a)
 b<-margin.table(HairEyeColor, 1)
 b
 
-#©╛╫ю╧╝а╕1
+#Л≈╟Л┼╣К╛╦Л═°1
 chisq.test(c(62, 71, 56, 65, 67, 82, 73))
 chisq.test(c(62, 71, 56, 65, 67))
 
-#©╛╫ю╧╝а╕2
+#Л≈╟Л┼╣К╛╦Л═°2
 belt<-matrix(c(72, 18, 6, 32), nrow = 2, ncol = 2, byrow = TRUE)
 dimnames(belt)<-list(c("O","X"),c("O","X"))
 belt
 chisq.test(belt)
 
-#©╛╫ю╧╝а╕3
+#Л≈╟Л┼╣К╛╦Л═°3
 eye_test<-matrix(c(0, 2, 8, 2, 0, 0, 2, 3, 5, 2), nrow=2, ncol = 5, byrow = TRUE)
 dimnames(eye_test)<-list(c("X", "O"), c(1, 2, 3, 4, 5))
 eye_test
 chisq.test(eye_test)
 fisher.test(eye_test)
 
-#©╧а╕ 4 ╨пгрг╔ ╦╦╣И╠Б
+#Л≤┬Л═° 4 К╤└М∙═М▒° К╖▄К⌠╓Й╦╟
 esoph
 str(esoph)
 xtabs(cbind(ncases, ncontrols)~., data=esoph)
@@ -49,21 +49,21 @@ esoph$ncases
 esoph$ncontrols
 esoph
 
-#©╧а╕ 5 xtabs д╚юла╕╟Ж ╟ка╓
+#Л≤┬Л═° 5 xtabs Л╧╢Л²╢Л═°ЙЁ╠ Й╡─Л═∙
 UCBAdmissions
 DF<-as.data.frame(UCBAdmissions)
 DF
 xtabs(Freq ~ Gender + Admit, DF)
 summary(xtabs(Freq ~ ., DF))
 
-#©╧а╕ 6 CrossTable{gmodels} гт╪Ж
+#Л≤┬Л═° 6 CrossTable{gmodels} М∙╗Л┬≤
 str(infert)
 install.packages("gmodels")
 library(gmodels)
 data(infert, package="datasets")
 CrossTable(infert$education, infert$induced, expected=TRUE, dnn=c("Education", "Induced"))
 
-#©╧а╕ 7 gofTest(): юШгу╣╣ ╟ка╓
+#Л≤┬Л═° 7 gofTest(): Л═│М∙╘К▐└ Й╡─Л═∙
 install.packages("EnvStats")
 library(EnvStats)
 set.seed(1020)
@@ -73,27 +73,27 @@ gofTest(x, test="chisq")
 library(MASS)
 fitdistr(x, "normal")
 
-#©╧а╕ 8 ks.test(): дщ╦П╟М╥нга ╫╨╧л╦ёЁКга ╟ка╓(╨Я╦П╪ЖюШ ╧Ф╧Щ)
+#Л≤┬Л═° 8 ks.test(): Л╫°К╙╗ЙЁ═К║°М■└ Л┼╓К╞╦К╔╢К┘╦М■└ Й╡─Л═∙(К╧└К╙╗Л┬≤Л═│ К╟╘К╡∙)
 require(graphics)
 x<-rnorm(50)
 y<-runif(50)
 
-#©╧а╕ 8-1 x, y╟║ ╟╟ю╨ ╨пфВ╥н╨нем Ё╙©т╢баЖ ╟ка╓
+#Л≤┬Л═° 8-1 x, yЙ╟─ Й╟≥Л²─ К╤└М▐╛К║°К╤─М└╟ К┌≤Л≥■К┼■Л╖─ Й╡─Л═∙
 ks.test(x, y)
 
-#©╧а╕ 8-2 x+2╟║ Gamma(3,2) ╨пфВ╥н╨нем Ё╙©т╢баЖ╦╕ ╟ка╓
+#Л≤┬Л═° 8-2 x+2Й╟─ Gamma(3,2) К╤└М▐╛К║°К╤─М└╟ К┌≤Л≥■К┼■Л╖─К╔╪ Й╡─Л═∙
 ks.test(x+2, "pgamma", 3, 2)
 ks.test(x+2, "pgamma", 3, 2, exact=FALSE)
 ks.test(x+2, "pgamma", 3, 2, alternative = "gr")
 
-#©╧а╕ 8-3 x╟║ x+2╨╦╢ы х╝╥ЭюШю╦╥н е╚аЖ╦╕ ╟ка╓
+#Л≤┬Л═° 8-3 xЙ╟─ x+2КЁ╢К▀╓ М≥∙К╔═Л═│Л°╪К║° М│╟Л╖─К╔╪ Й╡─Л═∙
 x2<-rnorm(50, -1)
 plot(ecdf(x), xlim=range(c(x, x2)))
 plot(ecdf(x2), add=TRUE, lty="dashed")
 
-#╦П╪ЖюШ ╟ка╓
+#К╙╗Л┬≤Л═│ Й╡─Л═∙
 t.test(x, x2, alternative = "g")
-#╨Я╦П╪ЖюШ ╟ка╓
+#К╧└К╙╗Л┬≤Л═│ Й╡─Л═∙
 wilcox.test(x, x2, alternative = "g")
 
 ks.test(x, x2, alternative = "l")
