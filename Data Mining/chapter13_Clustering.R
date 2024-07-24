@@ -75,7 +75,7 @@ barplot(table(nc$Best.n[1,]),
         main="Number of Clusters Chosen by 26 Criteria")
 
 set.seed(1234)
-fit.km <- kmeans(df, 3, nstart=25) # nstart= ´ÙÁßÀÇ ÃÊ±ê°ª ¼ö
+fit.km <- kmeans(df, 3, nstart=25) # nstart= Â´Ã™ÃÃŸÃ€Ã‡ ÃƒÃŠÂ±ÃªÂ°Âª Â¼Ã¶
 fit.km$size
 fit.km$centers
 
