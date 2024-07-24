@@ -40,7 +40,7 @@ teind <- setdiff(1:n, trind) # set difference( )
 iris[,5] <- as.factor((levels(iris[, 5])[2:3])[as.numeric(iris[,5])-1])
 gdis<-ada(Species~., data=iris[trind,], iter=20, nu=1, type="discrete")
   # nu=1(default) shrinkage parametor
-  # type=¡°discrete¡±( ) . ¡°real¡±, ¡°gentle¡±
+  # type=Â¡Â°discreteÂ¡Â±( ) . Â¡Â°realÂ¡Â±, Â¡Â°gentleÂ¡Â±
 gdis<-addtest(gdis, iris[teind, -5], iris[teind, 5])
 gdis
 
