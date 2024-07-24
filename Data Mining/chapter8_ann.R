@@ -32,7 +32,7 @@ net.infert <- neuralnet(case~age+parity+induced+spontaneous,
                       data=infert, hidden=2, err.fct="ce",
                       linear.output=FALSE, likelihood=TRUE)
   # hidden= # of hidden node
-  # err.fct= (error) ¡°sse¡±, ¡°ce¡±(cross entropy)
+  # err.fct= (error) Â¡Â°sseÂ¡Â±, Â¡Â°ceÂ¡Â±(cross entropy)
   # likelihood=T ; PRINT likelihood AIC, BIC
 net.infert
 plot(net.infert)
