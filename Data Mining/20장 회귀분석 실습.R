@@ -1,5 +1,5 @@
-# 20�� ȸ�ͺм�
-# ���� 1 : �ܼ�ȸ�ͺм�
+# 20장 회귀분석
+# 예제 1 : 단순회귀분석
 library(MASS)
 attach(cats)
 lm.out<-lm(Hwt ~ Bwt)
@@ -29,7 +29,7 @@ plot(Hwt ~ Bwt)
 lines(lowess(Hwt ~ Bwt), col='red')
 detach(cats)
 
-# ���� 2 : ����ȸ�ͺм�
+# 예제 2 : 다중회귀분석
 data(state)
 st<-as.data.frame(state.x77)
 str(st)
@@ -86,7 +86,7 @@ model.beta<-lm(Life.Exp ~ scale(Population) + scale(Murder) + scale(HS.Grad)
                + scale(Frost), data=st)
 summary(model.beta)
 
-# ��������1
+# 연습문제1
 data(trees)
 lm_trees<-lm(Volume ~ Girth, data=trees)
 summary(lm_trees)
@@ -94,6 +94,6 @@ predict(lm_trees, list(18))
 par(mfrow=c(2,2))
 plot(lm_trees)
 
-# ��������2
+# 연습문제2
 lm_height<-lm(Volume ~ Height, data=trees)
 summary(lm_height)
