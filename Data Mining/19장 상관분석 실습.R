@@ -1,15 +1,15 @@
-# 19Àå »ó°üºĞ¼®
+# 19ì¥ ìƒê´€ë¶„ì„
 
-# ¿¹Á¦1
+# ì˜ˆì œ1
 data(longley)
 str(longley)
-cor(longley) #ÇÇ¾î½¼ »ó°ü°è¼ö
+cor(longley) #í”¼ì–´ìŠ¨ ìƒê´€ê³„ìˆ˜
 pairs(longley)
 
-cor(longley, method="spearman") #½ºÇÇ¾î¸¸ »ó°ü°è¼ö
-cor(longley, method="kendall") #Äµ´ŞÀÇ »ó°ü°è¼ö
+cor(longley, method="spearman") #ìŠ¤í”¼ì–´ë§Œ ìƒê´€ê³„ìˆ˜
+cor(longley, method="kendall") #ìº”ë‹¬ì˜ ìƒê´€ê³„ìˆ˜
 
-# ¿¹Á¦2
+# ì˜ˆì œ2
 library("MASS")
 data(cats)
 str(cats)
@@ -22,7 +22,7 @@ title(main="Heart Weight (g) vs. Body Weight (kg) \nof Domestic Cats")
 with(cats, cor(Bwt, Hwt))
 with(cats, cor(Bwt, Hwt))^2
 
-# cor.test : »ó°ü°è¼ö¿¡ ´ëÇÑ °ËÁ¤
+# cor.test : ìƒê´€ê³„ìˆ˜ì— ëŒ€í•œ ê²€ì •
 with(cats, cor.test(Bwt, Hwt))
 with(cats, cor.test(~Bwt + Hwt, subset = (Sex=="F")))
 
@@ -32,35 +32,35 @@ with(cats, plot(Bwt, Hwt, type="n", xlab="Body Weight in kg",
 with(cats, points(Bwt[Sex=="F"], Hwt[Sex=="F"], pch=16, col="red"))
 with(cats, points(Bwt[Sex=="M"], Hwt[Sex=="M"], pch=17, col="blue"))
 
-# »ó°üºĞ¼® ½Ã°¢È­
-# psych ÆĞÅ°Áö: pairs.panel(), cor.plot()
+# ìƒê´€ë¶„ì„ ì‹œê°í™”
+# psych íŒ¨í‚¤ì§€: pairs.panel(), cor.plot()
 install.packages("psych")
 library(psych)
 
-# pairs.panels() ÇÔ¼ö Àû¿ëÀÇ ¿¹
+# pairs.panels() í•¨ìˆ˜ ì ìš©ì˜ ì˜ˆ
 data(iris)
 pairs.panels(iris[1:4], scale=T)
 
 pairs.panels(iris[1:4], bg=c("red", "yellow", "blue")[iris$Species],
              pch=21, main="Fisher Iris data by Species")
 
-# cor.plot() ÇÔ¼öÀÇ Àû¿ë ¿¹
+# cor.plot() í•¨ìˆ˜ì˜ ì ìš© ì˜ˆ
 cor.plot(cor(mtcars))
 
-# corrplot ÆĞÅ°Áö: corrplot()
+# corrplot íŒ¨í‚¤ì§€: corrplot()
 install.packages("corrplot")
 library(corrplot)
 
-# corrplot ÇÔ¼öÀÇ Àû¿ë ¿¹
+# corrplot í•¨ìˆ˜ì˜ ì ìš© ì˜ˆ
 M<-cor(mtcars)
-corrplot(M, method="ellipse", type="lower") #ÇÏ´ë°¢ À§Ä¡ Å¸¿øÇü
+corrplot(M, method="ellipse", type="lower") #í•˜ëŒ€ê° ìœ„ì¹˜ íƒ€ì›í˜•
 
-#corrplot.mixed ÇÔ¼öÀÇ Àû¿ëÀÇ ¿¹
+#corrplot.mixed í•¨ìˆ˜ì˜ ì ìš©ì˜ ì˜ˆ
 corrplot(M)
 corrplot(M, order="hclust", addrect = 3)
 corrplot.mixed(M)
 
-#ÄÃ·¯ ½ºÆåÆ®·³ º¯°æÇÏ±â
+#ì»¬ëŸ¬ ìŠ¤í™íŠ¸ëŸ¼ ë³€ê²½í•˜ê¸°
 col.1<-colorRampPalette(c("red", "white", "blue"))
 wb<-c("white", "black")
 
@@ -82,14 +82,14 @@ putPlot(pm, cp, 2, 3)
 
 getPlot(pm, 2, 1)
 
-# ¿¬½À¹®Á¦ 1
+# ì—°ìŠµë¬¸ì œ 1
 # 1-(a)
 data(trees)
 attach(trees)
 str(trees)
-# »êÁ¡µµ Çà·Ä
+# ì‚°ì ë„ í–‰ë ¬
 pairs(trees)
-# º¯¼ö °£ »ó°ü°è¼ö
+# ë³€ìˆ˜ ê°„ ìƒê´€ê³„ìˆ˜
 cor(trees)
 
 # 1-(b)
@@ -101,13 +101,13 @@ pairs.panels(trees, scale=T)
 library(GGally)
 ggpairs(trees)
 
-# ¿¬½À¹®Á¦ 2
+# ì—°ìŠµë¬¸ì œ 2
 library(MASS)
 data(Cars93)
 str(Cars93)
 attach(Cars93)
 
-#¿¬½À¹®Á¦3
+#ì—°ìŠµë¬¸ì œ3
 data(mtcars)
 attach(mtcars)
 str(mtcars)
