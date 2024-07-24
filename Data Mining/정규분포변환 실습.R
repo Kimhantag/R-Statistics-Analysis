@@ -1,5 +1,5 @@
-# Á¤±Ô ºÐÆ÷ º¯È¯
-# qqnorm() ÇÔ¼ö Àû¿ë ¿¹: ³­¼öÀÌ¿ë
+# ì •ê·œ ë¶„í¬ ë³€í™˜
+# qqnorm() í•¨ìˆ˜ ì ìš© ì˜ˆ: ë‚œìˆ˜ì´ìš©
 y<-rt(200, df=5)
 par(mfrow=c(1,2))
 qqnorm(y); qqline(y, col=2)
@@ -12,7 +12,7 @@ shapiro.test(x.norm)
 x.binom<-rbinom(100, 5000, 0.5)
 shapiro.test(x.binom)
 
-# ¿¹Á¦1 ¹Ú½º-ÄÛ½º º¯È¯
+# ì˜ˆì œ1 ë°•ìŠ¤-ì½•ìŠ¤ ë³€í™˜
 library(MASS)
 library(car)
 
@@ -32,7 +32,7 @@ qqnorm(y)
 
 p$lambda
 
-#¿¹Á¦2 ¼±Çü¸ðÇü¿¡¼­ ¹Ú½ºÄÛ½º º¯È¯
+#ì˜ˆì œ2 ì„ í˜•ëª¨í˜•ì—ì„œ ë°•ìŠ¤ì½•ìŠ¤ ë³€í™˜
 install.packages("faraway")
 library(faraway)
 data(ozone)
@@ -53,19 +53,19 @@ which.max(bc$y)
 md_best <- lm(O3^lambda ~ )
 
 
-# ¿¬½À¹®Á¦1
+# ì—°ìŠµë¬¸ì œ1
 attach(morley)
 qqnorm(Speed)
 qqline(Speed)
 shapiro.test(Speed)
 
-# ¿¬½À¹®Á¦2
+# ì—°ìŠµë¬¸ì œ2
 # (a)
 data(trees)
 attach(trees)
 qqnorm(Volume)
 qqline(Volume)
-shapiro.test(Volume) # Á¤±ÔºÐÆ÷¸¦ µû¸£Áö ¾Ê´Â´Ù.
+shapiro.test(Volume) # ì •ê·œë¶„í¬ë¥¼ ë”°ë¥´ì§€ ì•ŠëŠ”ë‹¤.
 
 # (b)
 library(car)
@@ -77,9 +77,9 @@ qqnorm(y)
 qqline(y)
 
 # (c)
-shapiro.test(y) # Á¤±Ô¼º ¸¸Á·
+shapiro.test(y) # ì •ê·œì„± ë§Œì¡±
 
-# ¿¬½À¹®Á¦3
+# ì—°ìŠµë¬¸ì œ3
 data(mtcars)
 str(mtcars)
 attach(mtcars)
@@ -89,11 +89,11 @@ mt<-lm(mpg~hp+wt)
 summary(mt)
 plot(mt, which=1)
 
-# (b) Á¤±ÔºÐÆ÷¸¦ µû¸£Áö ¾ÊÀ½
+# (b) ì •ê·œë¶„í¬ë¥¼ ë”°ë¥´ì§€ ì•ŠìŒ
 # (c)
 bc<-boxcox(mt, plotit=T)
 bc<-boxcox(mt, plotit=T, lambda=seq(-0.8, 0, 0.1))
-which.max(bc$y) # ÃÖ´ë lambdaÀÇ ÀÚ·á¹øÈ£
+which.max(bc$y) # ìµœëŒ€ lambdaì˜ ìžë£Œë²ˆí˜¸
 (lambda <- bc$x[which.max(bc$y)])
 
 #(d)
