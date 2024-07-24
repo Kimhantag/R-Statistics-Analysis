@@ -1,6 +1,6 @@
-# 23Àå Åë°è¸ðÀÇ½ÇÇè
-# ³­¼ö¹ß»ý¿ø¸®:¿ªº¯È¯¹ý
-# Ç¥ÁØÁ¤±ÔºÐÆ÷·ÎºÎÅÍ ³­¼ö¹ß»ý
+# 23ìž¥ í†µê³„ëª¨ì˜ì‹¤í—˜
+# ë‚œìˆ˜ë°œìƒì›ë¦¬:ì—­ë³€í™˜ë²•
+# í‘œì¤€ì •ê·œë¶„í¬ë¡œë¶€í„° ë‚œìˆ˜ë°œìƒ
 set.seed(10)
 r <- rnorm(10000, 0, 1)
 summary(r)
@@ -8,20 +8,20 @@ summary(r)
 hist(r, prob=T)
 curve(dnorm(x), from=-4, to=4, add=T)
 
-#ÀÌÇ×ºÐÆ÷·ÎºÎÅÍ ³­¼ö ¹ß»ý
+#ì´í•­ë¶„í¬ë¡œë¶€í„° ë‚œìˆ˜ ë°œìƒ
 n<-500
 set.seed(1032)
 U<-rbinom(n, 20, 0.5)
 hist(U, breaks=0:20 - 1/2, border="red", col="pink",
      xlab="Random variates from B(20, 0.5) : n=500")
 
-#ÀÌÇ×ºÐÆ÷ÀÇ È®·ü¹ÐµµÇÔ¼ö
+#ì´í•­ë¶„í¬ì˜ í™•ë¥ ë°€ë„í•¨ìˆ˜
 x<-0:20
 fx<-dbinom(x, 20, 0.5)
 lines(x, n*fx, type="h", col="blue", lwd=2)
 poins(x, n*fx, cex=2)
 
-#¿¹Á¦1 
+#ì˜ˆì œ1 
 install.packages("IPSUR")
 library(IPSUR)
 set.seed(1000)
@@ -31,7 +31,7 @@ hist(iqr)
 summary(iqr)
 quantile(iqr, 0.95)
 
-#¿¹Á¦2
+#ì˜ˆì œ2
 claim<-function(n, theta, alpha, lambda){
   n.claims <- rpois(n, lambda)
   S.N <- rep(0, n)
@@ -54,7 +54,7 @@ hist(profit.loss, br=50, xlab="in millions", ylab="frequency",
 
 mean(claim.size/1000000)
 
-#¿¹Á¦5
+#ì˜ˆì œ5
 n <- c(1, 10, 30)
 r<-10000
 
@@ -78,7 +78,7 @@ for (i in 1:length(n)){
   lines(seq(mu-3*sxbar, mu+3*sxbar, 0.1), nor.pdf, lty=2, col="red")
 }
 
-# ¿¹Á¦ 3
+# ì˜ˆì œ 3
 f<-function(x)
   sqrt(1-x^2)
 s<-seq(-1, 1 ,by=0.01)
@@ -98,18 +98,18 @@ y<-c*runif(n, 0, 1)
 R<-sum(y < f(x)) / n
 (b-a)*c*R
 
-# Á¤È®ÇÑ °ª
+# ì •í™•í•œ ê°’
 pi/2
 
-# ¿¹Á¦ 4
+# ì˜ˆì œ 4
 u<- runif(100000, min=2, max=5)
 mean(u^5)*(5-2)
 
-#Á¤È®ÇÑ °ª
+#ì •í™•í•œ ê°’
 f<-function(x) x^5
 integrate(f, 2, 5)
 
-#¿¬½À¹®Á¦ 1
+#ì—°ìŠµë¬¸ì œ 1
 set.seed(100)
 xbar<-replicate(n= 10000, mean(rt(10, 3)))
 xmed<-replicate(n= 10000, median(rt(10, 3)))
@@ -119,7 +119,7 @@ hist(xmed, xlim = c(-2, 2))
 var(xbar)
 var(xmed)
 
-#¿¬½À¹®Á¦2
+#ì—°ìŠµë¬¸ì œ2
 par(mfrow=c(2,2))
 for (i in 1:4){
   xbar=replicate(n= 10000, mean(runif(10*1^i, 0, 1)))
